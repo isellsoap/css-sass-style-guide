@@ -8,6 +8,10 @@ The following document outlines a reasonable style guide for CSS development. Th
 2. [Formatting](#2-formatting)
 3. [Comments](#3-comments)
 
+[Acknowledgements](#acknowledgements)
+
+[Other CSS style guides](#other-css-style-guides)
+
 ## 1. General principles
 
 ### Consistency
@@ -57,3 +61,14 @@ Unless dealing with CSS validator bugs or requiring proprietary syntax, use vali
 ### Quotation marks
 
 ## 3. Comments
+
+## Acknowledgements
+
+## Other CSS style guides
+
+- [BBC](http://www.bbc.co.uk/guidelines/futuremedia/technical/css.shtml)
+- [GitHub](https://github.com/styleguide/css)
+- [Google](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
+- [Idiomatic CSS](https://github.com/necolas/idiomatic-css)
+- [ThinkUp](https://github.com/ginatrapani/ThinkUp/wiki/Code-Style-Guide:-CSS)
+- [WordPress](http://make.wordpress.org/core/handbook/coding-standards/css/)
