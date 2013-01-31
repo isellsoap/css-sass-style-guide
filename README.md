@@ -28,6 +28,22 @@ Unless dealing with CSS validator bugs or requiring proprietary syntax, use vali
 
 ### Capitalization
 
+Use only lowercase. This applies to selectors, properties and property values (with the exception of strings).
+
+```css
+/* Not recommended  */
+UL,
+.HeAdER {
+  COLOR: #3AF;
+}
+
+/* Recommended  */
+ul,
+.header {
+  color: #3af;
+}
+```
+
 ### Indendation and whitespace
 
 ### Selector, declaration and rule separation
