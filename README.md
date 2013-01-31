@@ -52,6 +52,8 @@ Unless dealing with CSS validator bugs or requiring proprietary syntax, use vali
 
 #### Hexadecimal notation
 
+#### Multiple comma-separated values
+
 ### Quotation marks
 
 ## 3. Comments
