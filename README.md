@@ -26,7 +26,7 @@ Unless dealing with CSS validator bugs or requiring proprietary syntax, use vali
 
 ### Indendation and whitespace
 
-### Rule, selector and declaration separation
+### Selector, declaration and rule separation
 
 ### Declaration order
 
@@ -46,9 +46,11 @@ Unless dealing with CSS validator bugs or requiring proprietary syntax, use vali
 
 ### Values
 
-### Units
+#### 0 and units
 
-### Hexadecimal notation
+#### Leading 0s
+
+#### Hexadecimal notation
 
 ### Quotation marks
 
