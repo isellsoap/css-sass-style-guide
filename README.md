@@ -40,10 +40,16 @@ Unless dealing with CSS validator bugs or requiring proprietary syntax, use vali
 
 #### Type selectors
 
-### Quotation marks
+### Properties
+
+#### Shorthand notation
+
+### Values
 
 ### Units
 
 ### Hexadecimal notation
+
+### Quotation marks
 
 ## 3. Comments
