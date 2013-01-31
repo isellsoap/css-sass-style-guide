@@ -24,17 +24,26 @@ Unless dealing with CSS validator bugs or requiring proprietary syntax, use vali
 
 ### Capitalization
 
-### ID and class naming
+### Indendation and whitespace
 
-### Indendation
-
-### Trailing whitespace
+### Rule, selector and declaration separation
 
 ### Declaration order
+
+### IDs and classes
+
+#### Naming
+
+#### Delimiters
+
+#### Prefixes
+
+#### Type selectors
 
 ### Quotation marks
 
 ### Units
 
-### Colors
+### Hexadecimal notation
 
+## 3. Comments
