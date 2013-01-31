@@ -67,8 +67,10 @@ Unless dealing with CSS validator bugs or requiring proprietary syntax, use vali
 ## Other CSS style guides
 
 - [BBC](http://www.bbc.co.uk/guidelines/futuremedia/technical/css.shtml)
+- [CSS Wizardry](http://csswizardry.com/2012/04/my-html-css-coding-style/)
 - [GitHub](https://github.com/styleguide/css)
 - [Google](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
 - [Idiomatic CSS](https://github.com/necolas/idiomatic-css)
+- [SMACSS](http://smacss.com/)
 - [ThinkUp](https://github.com/ginatrapani/ThinkUp/wiki/Code-Style-Guide:-CSS)
 - [WordPress](http://make.wordpress.org/core/handbook/coding-standards/css/)
