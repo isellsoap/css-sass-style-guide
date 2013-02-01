@@ -102,6 +102,47 @@ html {
 
 ### Selector, declaration and rule separation
 
+**Separate selectors, declarations and rules by new lines.**
+
+```css
+/* Not recommended */
+h1, h2, h3 {
+  font-weight: normal;  line-height: 1.2;
+}
+p {
+  margin-bottom: 1.5em;
+}
+@media only screen {
+  h1 {
+    color: #333;
+  }
+}
+
+/* Recommended */
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+@media only screen {
+  
+  h1 {
+    color: #333;
+  }
+  
+}
+```
+
 ### Declaration order
 
 ### IDs and classes
