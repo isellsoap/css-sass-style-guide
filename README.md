@@ -62,7 +62,7 @@ ul,
 }
 ```
 
-Indent all [block content](http://www.w3.org/TR/CSS21/syndata.html#block), that is rules within rules as well as declarations, so to reflect hierarchy and improve understanding.
+**Indent all [block content](http://www.w3.org/TR/CSS21/syndata.html#block)**, that is rules within rules as well as declarations, so to reflect hierarchy and improve understanding.
 
 ```css
 /* Not recommended */
