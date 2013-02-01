@@ -208,6 +208,18 @@ h1 {
 .alt {}
 ```
 
+**Use ID and class names that are as short as possible but as long as necessary.** Try to convey what an ID or class is about while being as brief as possible. Using ID and class names this way contributes to acceptable levels of understandability and code efficiency.
+
+```css
+/* Not recommended */
+#navigation {}
+.atr {}
+
+/* Recommended */
+#nav {}
+.author {}
+```
+
 #### Delimiters
 
 **Separate words in ID and class names by a hyphen.** Do not concatenate words and abbreviations in selectors by any characters (including none at all) other than hyphens, in order to improve understanding and scannability.
