@@ -242,17 +242,116 @@ div.error {}
 
 #### Shorthand notation
 
+**Use shorthand properties where possible.** CSS offers a variety of [shorthand](http://www.w3.org/TR/CSS21/about.html#shorthand) properties (like `font`) that should be used whenever possible, even in cases where only one value is explicitly set. Using shorthand properties is useful for code efficiency and understandability.
+
+```css
+/* Not recommended */
+.example {
+  border-top-style: none;
+  font-family: palatino, georgia, serif;
+  font-size: 100%;
+  line-height: 1.6;
+  margin-bottom: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 0;
+}
+
+/* Recommended */
+.example {
+  border-top: 0;
+  font: 100%/1.6 palatino, georgia, serif;
+  margin: 0 1em 2em;
+}
+```
+
 ### Values
 
 #### 0 and units
 
+**Omit unit specification after “0” values** unless they are required.
+
+```css
+/* Not recommended */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.box {
+  border-top: 0px;
+}
+
+/* Recommended */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  border-top: 0;
+}
+```
+
 #### Leading 0s
 
+**Omit leading “0”s in values.** Do not put “0”s in front of values or lengths between -1 and 1.
+
+```css
+/* Not recommended */
+small {
+  font-size: 0.875em;
+}
+
+/* Recommended */
+small {
+  font-size: .875em;
+}
+```
+
 #### Hexadecimal notation
+
+**Use 3 character hexadecimal notation where possible.** For color values that permit it, 3 character hexadecimal notation is shorter and more succinct.
+
+```css
+/* Not recommended */
+p {
+  color: #4455aa;
+}
+
+/* Recommended */
+p {
+  color: #45a;
+}
+```
 
 #### Multiple comma-separated values
 
 ### Quotation marks
+
+**Use single quotation marks for attribute selectors and property values.** Use single (`''`) rather than double (`""`) quotation marks for attribute selectors or property values. Do not use quotation marks in URI values (`url()`). Exception: If you do need to use the `@charset` rule, use double quotation marks—single quotation marks are [not permitted](http://www.w3.org/TR/CSS21/syndata.html#charset).
+
+```css
+/* Not recommended */
+html {
+  background: #fff url("img/bg.png") repeat 0 0;
+  font-family: "open sans", arial, sans-serif;
+}
+
+input[type="search"] {
+  margin-left: 1em;
+}
+
+/* Recommended */
+html {
+  background: #fff url(img/bg.png) repeat 0 0;
+  font-family: 'open sans', arial, sans-serif;
+}
+
+input[type='search'] {
+  margin-left: 1em;
+}
+```
 
 ## 3. Comments
 
