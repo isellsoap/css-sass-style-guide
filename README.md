@@ -290,18 +290,10 @@ Omit unit specification after “0” values unless they are required.
   padding: 0px;
 }
 
-.box {
-  border-top: 0px;
-}
-
 /* Recommended */
 * {
   margin: 0;
   padding: 0;
-}
-
-.box {
-  border-top: 0;
 }
 ```
 
