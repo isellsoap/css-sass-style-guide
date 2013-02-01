@@ -188,11 +188,55 @@ h1 {
 
 #### Naming
 
+**Use meaningful or generic ID and class names.** Instead of presentational or cryptic names, always use ID and class names that reflect the purpose of the element in question, or that are otherwise generic. Names that are specific and reflect the purpose of the element should be preferred as these are most understandable and the least likely to change. Generic names are simply a fallback for elements that have no particular or no meaning different from their siblings. They are typically needed as “helpers”. Using functional or generic names reduces the probability of unnecessary document or template changes.
+
+```css
+/* Not recommended: meaningless */
+#yee-1901 {}
+
+/* Not recommended: presentational */
+.button-green {}
+.clear {}
+
+/* Recommended: specific */
+.gallery {}
+.login {}
+.video {}
+
+/* Recommended: generic */
+.aux {}
+.alt {}
+```
+
 #### Delimiters
 
-#### Prefixes
+**Separate words in ID and class names by a hyphen.** Do not concatenate words and abbreviations in selectors by any characters (including none at all) other than hyphens, in order to improve understanding and scannability.
+
+```css
+/* Not recommended: does not separate the words “demo” and “image” */
+.demoimage {}
+
+/* Not recommended: uses underscore instead of hyphen */
+.error_status {}
+
+/* Recommended */
+#video-id {}
+.ads-sample {}
+```
 
 #### Type selectors
+
+**Avoid qualifying ID and class names with type selectors.** Unless necessary (for example with helper classes), do not use element names in conjunction with IDs or classes. Avoiding unnecessary ancestor selectors is useful for [performance reasons](http://www.stevesouders.com/blog/2009/06/18/simplifying-css-selectors/).
+
+```css
+/* Not recommended */
+ul#example {}
+div.error {}
+
+/* Recommended */
+#example {}
+.error {}
+```
 
 ### Properties
 
