@@ -327,6 +327,25 @@ p {
 
 #### Multiple comma-separated values
 
+**Multiple comma-separated values for one property should be separated by either a space or a newline, including within `rgb()`, `rgba()`, `hsl()` and `hsla()`. Newlines should be used for lengthier multi-part values such as those for shorthand properties like `box-shadow` and `text-shadow`. Each subsequent value after the first should then be on a new line, indented to the same level as the selector and then spaced over to left-align with the previous value.
+
+```css
+/* Not recommended */
+.example {
+  font-family: arial,sans-serif;
+  text-shadow: 0 3px 0 #b2a98f, 0 14px 10px rgba(0,0,0,.15), 0 24px 2px rgba(0,0,0,.1), 0 34px 30px rgba(0,0,0,.1);
+}
+
+/* Recommended */
+.example {
+  font-family: arial, sans-serif;
+  text-shadow: 0 3px 0 #b2a98f,
+               0 14px 10px rgba(0, 0, 0, .15),
+               0 24px 2px rgba(0, 0, 0, .1),
+               0 34px 30px rgba(0, 0, 0, .1);
+}
+```
+
 ### Quotation marks
 
 **Use single quotation marks for attribute selectors and property values.** Use single (`''`) rather than double (`""`) quotation marks for attribute selectors or property values. Do not use quotation marks in URI values (`url()`). Exception: If you do need to use the `@charset` rule, use double quotation marks—single quotation marks are [not permitted](http://www.w3.org/TR/CSS21/syndata.html#charset).
