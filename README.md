@@ -126,10 +126,6 @@ h3 {
   line-height: 1.2;
 }
 
-ul {
-  list-style-type: disc;
-}
-
 p {
   margin-bottom: 1.5em;
 }
@@ -144,6 +140,40 @@ p {
 ```
 
 ### Declaration order
+
+**Alphabetize declarations.** Put declarations in alphabetical order in order to achieve consistent code in a way that is easy to remember and maintain. Ignore vendor-specific prefixes for sorting purposes. However, multiple vendor-specific prefixes for a certain CSS property should be kept sorted (e.g. `-moz` prefix comes before `-webkit`).
+
+```css
+/* Not recommended */
+.box {
+  text-indent: 2em;
+  background: #f5f5f5;
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+  color: #000;
+  border: 1px solid;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* Recommended */
+.box {
+  background: #f5f5f5;
+  border: 1px solid;
+  border-radius: 4px;
+  color: #000;
+  text-align: center;
+  text-indent: 2em;
+  -moz-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -webkit-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+```
 
 ### IDs and classes
 
