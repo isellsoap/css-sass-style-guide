@@ -46,6 +46,22 @@ ul,
 
 ### Indendation and whitespace
 
+Indent by two spaces at a time. Don’t use tabs or mix tabs and spaces for indentation.
+
+```css
+/* Not recommended */
+.example {
+	   background: #fff;
+	color: #333;
+}
+
+/* Recommended */
+.example {
+  background: #fff;
+  color: #333;
+}
+```
+
 ### Selector, declaration and rule separation
 
 ### Declaration order
