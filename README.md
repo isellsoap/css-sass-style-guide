@@ -102,20 +102,12 @@ html {
 
 ### Selector, declaration and rule separation
 
-**Separate selectors, declarations and rules by new lines.**
+Separate selectors and declarations by new lines.
 
 ```css
 /* Not recommended */
 h1, h2, h3 {
   font-weight: normal;  line-height: 1.2;
-}
-p {
-  margin-bottom: 1.5em;
-}
-@media only screen {
-  h1 {
-    color: #333;
-  }
 }
 
 /* Recommended */
@@ -125,17 +117,34 @@ h3 {
   font-weight: normal;
   line-height: 1.2;
 }
+```
 
-p {
-  margin-bottom: 1.5em;
+Separate rules by new lines and always put a line between rules.
+
+```css
+/* Not recommended */
+html {
+  background: #fff;
+} body {
+  margin: auto;
+  width: 50%;
+}
+h1 {
+  font-size: 2em;
 }
 
-@media only screen {
-  
-  h1 {
-    color: #333;
-  }
-  
+/* Recommended */
+html {
+  background: #fff;
+}
+
+body {
+  margin: auto;
+  width: 50%;
+}
+
+h1 {
+  font-size: 2em;
 }
 ```
 
