@@ -8,6 +8,14 @@
 2. [Terminology](#2-terminology)
 3. [Comments](#3-comments)
 4. [Formatting](#4-formatting)
+	* [Declaration order](#declaration-order)
+	* [Selector, declaration, and rule set separation](#selector-declaration-and-rule-set-separation)
+	* [Indentation and whitespace](#indentation-and-whitespace)
+	* [Capitalization](#capitalization)
+	* [IDs and classes](#ids-and-classes)
+	* [Properties](#properties)
+	* [Values](#values)
+	* [Quotation marks](#quotation-marks)
 
 
 [Acknowledgements](#acknowledgements)
