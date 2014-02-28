@@ -453,8 +453,8 @@ Use double (`"`) rather than single (`'`) quotation marks for attribute selector
 ```css
 /* Not recommended */
 html {
-  background: #fff url("img/bg.png") repeat 0 0;
-  font-family: "open sans", arial, sans-serif;
+  background: #fff url('img/bg.png') repeat 0 0;
+  font-family: 'open sans', arial, sans-serif;
 }
 
 input[type="search"] {
@@ -463,8 +463,8 @@ input[type="search"] {
 
 /* Recommended */
 html {
-  background: #fff url(img/bg.png) repeat 0 0;
-  font-family: 'open sans', arial, sans-serif;
+  background: #fff url("img/bg.png") repeat 0 0;
+  font-family: "open sans", arial, sans-serif;
 }
 
 input[type='search'] {
