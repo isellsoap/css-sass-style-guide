@@ -7,7 +7,7 @@
 	* [Validity](#validity)
 2. [Terminology](#2-terminology)
 3. [Comments](#3-comments)
-4. [CSS formatting](#4-formatting)
+4. [CSS formatting](#4-css-formatting)
 	* [Declaration order](#declaration-order)
 	* [Selector, declaration, and rule set separation](#selector-declaration-and-rule-set-separation)
 	* [Indentation and whitespace](#indentation-and-whitespace)
@@ -100,7 +100,7 @@ Example:
 /* Basic comment */
 ```
 
-## 4. Formatting
+## 4. CSS formatting
 
 * Include a single space before the opening brace of a ruleset.
 * Include a single space after the colon of a declaration.
