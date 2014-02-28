@@ -1,18 +1,25 @@
-# CSS style guide
-
-The following document outlines a reasonable style guide for CSS development. These guidelines strongly encourage the use of existing, common, sensible patterns. They should be adapted as needed to create your own style guide.
+# CSS/Sass Style Guide
 
 ## Table of contents
 
 1. [General principles](#1-general-principles)
-2. [Formatting](#2-formatting)
+	* [Consistency](#consistency)
+	* [Validity](#validity)
+2. [Terminology](#2-terminology)
 3. [Comments](#3-comments)
+4. [Formatting](#4-formatting)
+
 
 [Acknowledgements](#acknowledgements)
 
 [Other CSS style guides](#other-css-style-guides)
 
 ## 1. General principles
+
+* Don’t try to prematurely optimize your code; keep it readable and understandable.
+* All code in any code-base should look like a single person typed it, even when many people are contributing to it.
+* Strictly enforce the agreed-upon style.
+* If in doubt when deciding upon a style use existing, common patterns. 
 
 ### Consistency
 
@@ -24,102 +31,132 @@ The point of having style guidelines is to have a common vocabulary of coding so
 
 Unless dealing with CSS validator bugs or requiring proprietary syntax, use valid CSS code. Use tools such as the [W3C CSS validator](http://jigsaw.w3.org/css-validator/) to test. Using valid CSS is a measurable baseline quality attribute that allows to spot CSS code that may not have any effect and can be removed, and that ensures proper CSS usage.
 
-## 2. Formatting
+## 2. Terminology
 
-### Capitalization
+Get the CSS terminology right. This helps simplifying communication between team members. Take this example:
 
-Use only lowercase. This applies to selectors, properties and property values (with the exception of strings).
+```css
+h1 {
+  margin: 0;
+  padding: 0;
+}
+```
+
+* The whole code example is a **rule set**.
+* `h1` is a **selector**.
+* `margin` (also `padding`) is a **property**.
+* The content between the colon and the semi-colon is a **value**.
+* The combination of property and value makes a **declaration**.
+* A **declaration block** is the sum of all declarations in a rule set.
+
+## 3. Comments
+
+Well commented code is extremely important. Take time to describe components, how they work, their limitations, and the way they are constructed. Don't leave others in the team guessing as to the purpose of uncommon or non-obvious code.
+
+Comment style should be simple and consistent within a single code base.
+
+* Place comments on a new line above their subject.
+* Keep line length to a maximum of **80 columns**.
+* Make liberal use of comments to break CSS code into discrete sections.
+* Use “sentence case” comments and consistent text indentation.
+
+Example:
+
+```css
+/**
+ * ==========================================================================
+ * Section comment block
+ * ==========================================================================
+ */
+
+/**
+ * Sub-section comment block
+ * ==========================================================================
+ */
+
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ * The long description is ideal for more detailed explanations and
+ * documentation. It can include example HTML, URLs, or any other information
+ * that is deemed necessary or useful.
+ *
+ * TODO: This is a todo statement that describes an atomic task to be completed
+ *   at a later date. It wraps after 80 characters and following lines are
+ *   indented by 2 spaces.
+ */
+
+/* Basic comment */
+```
+
+## 4. Formatting
+
+* Include a single space before the opening brace of a ruleset.
+* Include a single space after the colon of a declaration.
+* Quote attribute values in selectors, e.g., `input[type="checkbox"]`.
+* Include a space after each comma in comma-separated property or function values.
+* Include a semi-colon at the end of the last declaration in a declaration block.
+* Place the closing brace of a ruleset in the same column as the first character of the ruleset.
+
+### Declaration order 
+
+Put declarations in **alphabetical order** in order to achieve consistent code in a way that is easy to remember and maintain. Ignore vendor-specific prefixes for sorting purposes. However, multiple vendor-specific prefixes for a certain CSS property should be kept sorted (e.g. `-moz` prefix comes before `-webkit`).
 
 ```css
 /* Not recommended */
-UL,
-.HeAdER {
-  COLOR: #3AF;
+.selector {
+  text-indent: 2em;
+  background: #f5f5f5;
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+  color: #000;
+  border: 1px solid;
+  text-align: center;
+  border-radius: 4px;
 }
 
 /* Recommended */
-ul,
-.header {
-  color: #3af;
+.selector {
+  background: #f5f5f5;
+  border: 1px solid;
+  border-radius: 4px;
+  color: #000;
+  text-align: center;
+  text-indent: 2em;
+  -moz-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -webkit-transform: rotate(-2deg);
+  transform: rotate(-2deg);
 }
 ```
 
-### Indentation and whitespace
-
-Indent by two spaces at a time. Don’t use tabs or mix tabs and spaces for indentation.
-
-```css
-/* Not recommended */
-.example {
-	       background: #fff;
-     color: #333;
-}
-
-/* Recommended */
-.example {
-  background: #fff;
-  color: #333;
-}
-```
-
-Indent all [block content](http://www.w3.org/TR/CSS21/syndata.html#block), that is rules within rules as well as declarations, so to reflect hierarchy and improve understanding.
-
-```css
-/* Not recommended */
-@media only screen and (min-width: 80em) {
-
-html {
-  font-size: 1.125em;
-}
-
-}
-
-/* Recommended */
-@media only screen and (min-width: 80em) {
-
-  html {
-    font-size: 1.125em;
-  }
-
-}
-```
-
-Remove trailing whitespaces. Trailing whitespaces are unnecessary and can complicate diffs.
-
-```css
-/* Not recommended (trailing whitespaces marked as “_”) */
-.example {__
-  background: #fff;_____
-  color: #333;__
-}
-
-/* Recommended */
-.example {
-  background: #fff;
-  color: #333;
-}
-```
-
-### Selector, declaration and rule separation
+### Selector, declaration, and rule set separation
 
 Separate selectors and declarations by new lines.
 
 ```css
 /* Not recommended */
 h1, h2, h3 {
-  font-weight: normal;  line-height: 1.2;
+  font-weight: 400;  line-height: 1.2;
 }
 
 /* Recommended */
 h1,
 h2,
 h3 {
-  font-weight: normal;
+  font-weight: 400;
   line-height: 1.2;
 }
 ```
 
-Separate rules by new lines and always put a line between rules.
+Separate rule sets by new lines and always put a line between rules.
 
 ```css
 /* Not recommended */
@@ -148,39 +185,98 @@ h1 {
 }
 ```
 
-### Declaration order
-
-Put declarations in alphabetical order in order to achieve consistent code in a way that is easy to remember and maintain. Ignore vendor-specific prefixes for sorting purposes. However, multiple vendor-specific prefixes for a certain CSS property should be kept sorted (e.g. `-moz` prefix comes before `-webkit`).
+**Exception:** Don’t add new lines at the end of rule sets within rule sets.
 
 ```css
 /* Not recommended */
-.box {
-  text-indent: 2em;
-  background: #f5f5f5;
-  -webkit-transform: rotate(-2deg);
-  -moz-transform: rotate(-2deg);
-  -o-transform: rotate(-2deg);
-  -ms-transform: rotate(-2deg);
-  transform: rotate(-2deg);
-  color: #000;
-  border: 1px solid;
-  text-align: center;
-  border-radius: 4px;
+@media only screen and (min-width: 80em) {
+
+  html {
+    font-size: 1.125em;
+  }
+
 }
 
 /* Recommended */
-.box {
-  background: #f5f5f5;
-  border: 1px solid;
-  border-radius: 4px;
-  color: #000;
-  text-align: center;
-  text-indent: 2em;
-  -moz-transform: rotate(-2deg);
-  -ms-transform: rotate(-2deg);
-  -o-transform: rotate(-2deg);
-  -webkit-transform: rotate(-2deg);
-  transform: rotate(-2deg);
+@media only screen and (min-width: 80em) {
+
+  html {
+    font-size: 1.125em;
+  }
+}
+```
+
+### Indentation and whitespace
+
+Indent by two spaces at a time. Don’t use tabs or mix tabs and spaces for indentation.
+
+```css
+/* Not recommended */
+.selector {
+	       background: #fff;
+     color: #333;
+}
+
+/* Recommended */
+.selector {
+  background: #fff;
+  color: #333;
+}
+```
+
+Indent all [block content](http://www.w3.org/TR/CSS21/syndata.html#block), that is rule sets within rule sets as well as declarations, so to reflect hierarchy and improve understanding. Also: 
+
+```css
+/* Not recommended */
+@media only screen and (min-width: 80em) {
+
+html {
+  font-size: 1.125em;
+}
+}
+
+/* Recommended */
+@media only screen and (min-width: 80em) {
+
+  html {
+    font-size: 1.125em;
+  }
+}
+```
+
+Remove trailing whitespaces. Trailing whitespaces are unnecessary and can complicate diffs.
+
+```css
+/* Not recommended (trailing whitespaces marked as “_”) */
+.selector {__
+  background: #fff;_____
+  color: #333;__
+}
+
+/* Recommended */
+.selector {
+  background: #fff;
+  color: #333;
+}
+```
+
+### Capitalization
+
+**Use only lowercase.** This applies to selectors, properties, and property values.
+
+```css
+/* Not recommended */
+UL,
+.HeAdER {
+  COLOR: #3AF;
+  font-family: "Neue Helvetica", Helvetica, sans-serif;
+}
+
+/* Recommended */
+ul,
+.header {
+  color: #3af;
+  font-family: "neue helvetica", helvetica, sans-serif;
 }
 ```
 
@@ -236,7 +332,7 @@ Separate words in ID and class names by a hyphen. Do not concatenate words and a
 .ads-sample {}
 ```
 
-#### Type selectors
+#### Avoid using type selectors
 
 Unless necessary (for example with helper classes), do not use element names in conjunction with IDs or classes. Avoiding unnecessary ancestor selectors is useful for [performance reasons](http://www.stevesouders.com/blog/2009/06/18/simplifying-css-selectors/).
 
@@ -352,7 +448,7 @@ Multiple comma-separated values for one property should be separated by either a
 
 ### Quotation marks
 
-Use single (`''`) rather than double (`""`) quotation marks for attribute selectors or property values. Do not use quotation marks in URI values (`url()`). Exception: If you do need to use the `@charset` rule, use double quotation marks—single quotation marks are [not permitted](http://www.w3.org/TR/CSS21/syndata.html#charset).
+Use double (`"`) rather than single (`'`) quotation marks for attribute selectors or property values.
 
 ```css
 /* Not recommended */
@@ -375,8 +471,6 @@ input[type='search'] {
   margin-left: 1em;
 }
 ```
-
-## 3. Comments
 
 ## Acknowledgements
 
