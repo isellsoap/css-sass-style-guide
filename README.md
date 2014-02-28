@@ -96,7 +96,6 @@ Example:
 
 * Include a single space before the opening brace of a ruleset.
 * Include a single space after the colon of a declaration.
-* Quote attribute values in selectors, e.g., `input[type="checkbox"]`.
 * Include a space after each comma in comma-separated property or function values.
 * Include a semi-colon at the end of the last declaration in a declaration block.
 * Place the closing brace of a ruleset in the same column as the first character of the ruleset.
@@ -448,7 +447,7 @@ Multiple comma-separated values for one property should be separated by either a
 
 ### Quotation marks
 
-Use double (`"`) rather than single (`'`) quotation marks for attribute selectors or property values.
+Use double (`"`) rather than single (`'`) quotation marks for attribute selectors or property values. Also don’t forget to quote attribute values in selectors.
 
 ```css
 /* Not recommended */
@@ -457,7 +456,7 @@ html {
   font-family: 'open sans', arial, sans-serif;
 }
 
-input[type="search"] {
+input[type=search] {
   margin-left: 1em;
 }
 
@@ -467,7 +466,7 @@ html {
   font-family: "open sans", arial, sans-serif;
 }
 
-input[type='search'] {
+input[type="search"] {
   margin-left: 1em;
 }
 ```
